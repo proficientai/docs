@@ -23,9 +23,14 @@
   },
   "anchors": [
     {
-      "name": "API Reference",
+      "name": "Client API Reference",
       "icon": "rectangle-terminal",
-      "url": "api-reference"
+      "url": "client-api-reference"
+    },
+    {
+      "name": "Admin API Reference",
+      "icon": "rectangle-terminal",
+      "url": "admin-api-reference"
     },
     {
       "name": "Changelog",
@@ -44,16 +49,20 @@
       "pages": ["introduction", "features"]
     },
     {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "group": "Client API Documentation",
+      "pages": ["client-api-reference/authentication"]
+    },
+    {
+      "group": "Admin API Documentation",
+      "pages": ["admin-api-reference/authentication"]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "client-api-reference/endpoint/get",
+        "client-api-reference/endpoint/create",
+        "client-api-reference/endpoint/update",
+        "client-api-reference/endpoint/delete"
       ]
     }
   ],
