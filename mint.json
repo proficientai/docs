@@ -53,16 +53,22 @@
       "pages": ["client-api-reference/authentication"]
     },
     {
+      "group": "Agents",
+      "pages": [
+        "client-api-reference/agents/get",
+        "client-api-reference/agents/list"
+      ]
+    },
+    {
       "group": "Admin API Documentation",
       "pages": ["admin-api-reference/authentication"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Agents",
       "pages": [
-        "client-api-reference/endpoint/get",
-        "client-api-reference/endpoint/create",
-        "client-api-reference/endpoint/update",
-        "client-api-reference/endpoint/delete"
+        "admin-api-reference/agents/get",
+        "admin-api-reference/agents/list",
+        "admin-api-reference/agents/create"
       ]
     }
   ],
