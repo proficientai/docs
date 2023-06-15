@@ -1,25 +1,30 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentation Starter Kit",
+  "name": "Proficient AI Documentation",
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
+    "primary": "#8535f0",
+    "light": "#5659f0",
+    "dark": "#5659f0",
+    "background": {
+      "dark": "#131314",
+      "light": "#f9f7fc"
+    }
   },
   "topbarLinks": [
     {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+      "name": "GitHub",
+      "url": "https://github.com/proficientai/js",
+      "type": "link"
     }
   ],
   "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
+    "name": "Request Access",
+    "url": "https://proficientai.com/access"
   },
   "anchors": [
     {
@@ -33,14 +38,9 @@
       "url": "admin-api-reference"
     },
     {
-      "name": "Changelog",
-      "icon": "list",
-      "url": "https://mintlify.com"
-    },
-    {
       "name": "Community",
       "icon": "discord",
-      "url": "https://mintlify.com/community"
+      "url": "https://discord.gg/DVbwTM8erb"
     }
   ],
   "navigation": [
@@ -73,8 +73,8 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/proficientai",
+    "github": "https://github.com/proficientai",
+    "linkedin": "https://www.linkedin.com/company/proficientai"
   }
 }
