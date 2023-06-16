@@ -15,6 +15,7 @@
       "light": "#f9f7fc"
     }
   },
+  "backgroundImage": "images/bg.png",
   "topbarLinks": [
     {
       "name": "GitHub",
