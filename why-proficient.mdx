@@ -2,7 +2,15 @@
 title: "Why Proficient?"
 ---
 
-Our increasingly digital world demands seamless and engaging interactions between users and applications. With the advent of highly advanced AI models like ChatGPT, companies are leveraging conversational AI agents to enhance user experiences and effectively manage digital communication. Proficient AI is a platform that empowers developers by providing an end-to-end solution for building, deploying, and managing AI-driven chat assistants.
+Proficient AI is a platform that empowers developers by providing an end-to-end solution for building, deploying, and managing AI chat assistants.
+
+This approach has numerous benefits for businesses:
+
+- switch between AI providers (e.g. OpenAI < -- > Anthropic) with 1 click
+- no need to write custom backends to store and manage user-agent interactions
+- powerful analytics and monitoring built into the admin dashboard
+- over-the-air config updates (system message, quotas, content moderation, etc.)
+- ready-to-use, customizable UI components
 
 With Proficient AI's API, developers can:
 
@@ -21,3 +29,76 @@ Features:
 - Compatibility: Proficient AI supports a wide range of SDKs such as iOS, React Native, and others, broadening the horizons for integration with various services.
 
 In this documentation, you will find detailed information on how to utilize Proficient AI's API to create and manage AI-driven chat agents. We will guide you through setting up and customizing your chatbot, building backend systems using our tools, and much more. Get ready to revolutionize your application's communication and engagement capabilities with Proficient AI!
+
+## What does it solve?
+
+With the explosion of ChatGPT, more companies have been adopting AI chatbots. But implementing an AI-powered chat system currently involves a pretty significant fixed cost. For an end-to-end solution, you need to:
+
+- write a collection of backend systems to communicate with AI providers (OpenAI, Anthropic, etc.), and moderate the generated content
+- write database code to accommodate user-assistant interactions
+- write UI components and connect them to your backend
+- optimize config values (prompt engineering, temperature adjustments, etc.)
+
+This process can be lengthy, error-prone, and rigid, often requiring new deployments for incremental updates. Having built such systems since GPT-3's inception, I’m well aware that many developers face similar challenges when implementing solutions with essentially the same core functionality across different domains.
+
+Proficient standardizes the structure of human-AI interactions by offering an API for abstract AI agents, along with a suite of well-tested tools. Our solution streamlines the integration process, reducing the fixed cost and time commitment for developers to just 3 minutes.
+
+## What do we understand that others don't
+
+We believe that as LLMs become commoditized, companies that use these technologies will soon have plenty of options to choose from. Instead of integrating with each LLM provider separately, they should rely on abstract, technology-agnostic, and easily configurable AI entities. Granted, some businesses may require more granular access to the underlying models but there is an entire class of apps that need to operate on a higher abstraction layer using AI agents. Proficient will lay the foundation for these entities, and post-launch, we plan to continually expand their capabilities.
+
+Roadmap:
+
+- browsing and integration with other services (like ChatGPT plugins)
+- more frontend SDKs (iOS, React Native, etc.)
+- more providers including open-source Hugging Face models
+- admin SDK to give programmatic control of agents and allow fine-tuning/further RLHF
+- agent configuration presets and end-user templates to allow reusability
+- custom algorithms to efficiently fill LLM context windows with user details
+
+## React SDK
+
+Install the React SDK.
+
+```
+npm install @proficient/react
+```
+
+Add the UI component to your code.
+
+```tsx
+import { InteractionView } from "@proficient/react";
+
+function MyPageComponent() {
+  const agentId = "ag_h8T..."; // Can be hardcoded or retrieved from the API
+  const userExternalId = "user123"; // Get dynamically
+  return (
+    <div>
+      <InteractionView
+        apiKey={process.env.PROFICIENT_AI_PUBLISHABLE_KEY}
+        agentId={agentId}
+        userExternalId={userExternalId}
+      />
+    </div>
+  );
+}
+```
+
+## Admin SDK
+
+Manage your agents from privileged environments.
+
+```ts
+import { ProficientClient } from "@proficient/admin";
+
+const proficient = new ProficientClient({
+  // Retrieve from your environment secrets
+  secretKey: "sk_cpB...",
+});
+
+const agentId = "ag_h8T...";
+
+await proficient.agents.updateConfig(agentId, {
+  model: "anthropic.claude-v1-100k",
+});
+```
