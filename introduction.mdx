@@ -1,24 +1,52 @@
 ---
 title: Introduction
-description: Add a conversational AI agent to your React app in 3 minutes
+description: Add a conversational AI agent to your app in 3 minutes
 ---
 
 ## What is Proficient?
 
 Proficient AI is a platform that enables developers to add conversational AI agents to their apps in minutes.
 Our interaction APIs and SDKs coupled with our powerful web dashboard are the simplest way teams can
-add and operate AI assistants for their end-user applications.
+add and operate AI agents for their end-user applications.
 
 ## How does it work?
 
 Here are all the steps required for an end-to-end integration of an AI agent:
 
 1. Go to the [web dashboard](https://proficientai.com) and create an agent with the specified AI provider
-2. Configure the agent to your application's needs
+2. Customize the agent to your application's needs by editing its configuration
 3. Add the prebuilt UI component to your app to connect it to the agent (3-5 lines of code)
 
 Done! The agent appears in a chat window with a persistent conversation history and your users
 are ready to interact with it, once you deploy.
+
+### Architecture
+
+We can visualize the architecture of a typical application powered by Proficient with the following diagram.
+
+<img src="/images/architecture.png" />
+
+There are a few key things to note here:
+
+- **Agents live in Proficient's cloud**
+
+  Agents are virtual entitites that you operate through the Proficient platform.
+
+- **Agents are powered with many different models**
+
+  Proficient is connected to many different LLM providers so you don't have to write your own integration.
+
+- **Client apps connect directly to Proficient**
+
+  For simple use cases, your app may not even need a custom backend.
+
+- **Backend apps can be connected to Proficient**
+
+  You can use the API to programmatically manage your agents and update user data.
+
+- **Interactions and user data are stored on Proficient**
+
+  You can access your data at any time using the API or admin dashboard.
 
 ## What can I build with it?
 
