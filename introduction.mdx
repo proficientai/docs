@@ -3,13 +3,17 @@ title: Introduction
 description: Add a conversational AI agent to your app in 3 minutes
 ---
 
-## What is Proficient?
+## What is Proficient AI?
 
 Proficient AI is a platform that enables developers to add conversational AI agents to their apps in minutes.
 Our interaction APIs and SDKs coupled with our powerful web dashboard are the simplest way teams can
 add and operate AI agents for their end-user applications.
 
-## How does it work?
+## How it works
+
+Our intuitive and easy-to-use platform has everything you need to make the integration process a breeze.
+
+### Steps
 
 Here are all the steps required for an end-to-end integration of an AI agent:
 
@@ -20,19 +24,26 @@ Here are all the steps required for an end-to-end integration of an AI agent:
 Done! The agent appears in a chat window with a persistent conversation history and your users
 are ready to interact with it, once you deploy.
 
+<Tip>
+  For more advanced features, you need to use the API, which lets you connect
+  your agents to all parts of your application.
+</Tip>
+
 ### Architecture
 
 We can visualize the architecture of a typical application powered by Proficient with the following diagram.
 
-<img src="/images/architecture.png" />
+<Frame type="simple" caption="System architecture visualization">
+  <img src="/images/architecture.png" />
+</Frame>
 
 There are a few key things to note here:
 
-- **Agents live in Proficient's cloud**
+- **Agents live in Proficient cloud**
 
   Agents are virtual entitites that you operate through the Proficient platform.
 
-- **Agents are powered with many different models**
+- **Agents can be connected to many different models**
 
   Proficient is connected to many different LLM providers so you don't have to write your own integration.
 
@@ -44,9 +55,28 @@ There are a few key things to note here:
 
   You can use the API to programmatically manage your agents and update user data.
 
-- **Interactions and user data are stored on Proficient**
+- **Proficient stores interactions and user data**
 
   You can access your data at any time using the API or admin dashboard.
+
+### Two separate APIs
+
+All operations on the Proficient platform are divided into two categories each of which is represented by
+a standalone API.
+
+#### 1. Client API
+
+The [Client API](/client-api-reference) is designed for client applications that are allowed to access only
+a subset of all available operations. For example, agents can't be configured from a client application. On
+the other hand, an authenticated user sending a message to an agent can be implemented with the Client API.
+
+#### 2. Admin API
+
+The [Admin API](/admin-api-reference) is used in privileged environments like your server. With admin-level
+access, you can use this API to create, configure and delete agents, monitor interactions, update user data
+and more.
+
+<Info>The Admin API should not be accessed from client applications.</Info>
 
 ## What can I build with it?
 
