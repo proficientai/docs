@@ -41,12 +41,22 @@
       "name": "Community",
       "icon": "discord",
       "url": "https://discord.gg/DVbwTM8erb"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/proficientai/js"
     }
   ],
   "navigation": [
     {
-      "group": "Home",
-      "pages": ["introduction", "features"]
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "why-proficient",
+        "core-concepts",
+        "installation"
+      ]
     },
     {
       "group": "Client API Documentation",
@@ -73,8 +83,9 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/proficientai",
+    "discord": "https://discord.gg/DVbwTM8erb",
     "github": "https://github.com/proficientai",
-    "linkedin": "https://www.linkedin.com/company/proficientai"
+    "twitter": "https://twitter.com/proficientai",
+    "linkedin": "https://linkedin.com/company/proficientai"
   }
 }
