@@ -1,52 +1,27 @@
 ---
 title: Introduction
+description: Add a conversational AI agent to your React app in 3 minutes
 ---
 
-Welcome to Proficient AI, a platform designed to streamline the integration of conversational AI agents into your applications. Our APIs and SDKs enable developers to add powerful AI-driven chatbot features to their apps with ease, saving both time and effort.
+## What is Proficient?
 
-## React SDK
+Proficient AI is a platform that enables developers to add conversational AI agents to their apps in minutes.
+Our interaction APIs and SDKs coupled with our powerful web dashboard are the simplest way teams can
+add and operate AI assistants for their end-user applications.
 
-Install the React SDK.
+## How does it work?
 
-```
-npm install @proficient/react
-```
+Here are all the steps required for an end-to-end integration of an AI agent:
 
-Add the UI component to your code.
+1. Go to the [web dashboard](https://proficientai.com) and create an agent with the specified AI provider
+2. Configure the agent to your application's needs
+3. Add the prebuilt UI component to your app to connect it to the agent (3-5 lines of code)
 
-```tsx
-import { InteractionView } from "@proficient/react";
+Done! The agent appears in a chat window with a persistent conversation history and your users
+are ready to interact with it, once you deploy.
 
-function MyPageComponent() {
-  const agentId = "ag_h8T..."; // Can be hardcoded or retrieved from the API
-  const userExternalId = "user123"; // Get dynamically
-  return (
-    <div>
-      <InteractionView
-        apiKey={process.env.PROFICIENT_AI_PUBLISHABLE_KEY}
-        agentId={agentId}
-        userExternalId={userExternalId}
-      />
-    </div>
-  );
-}
-```
+## What can I build with it?
 
-## Admin SDK
-
-Manage your agents from privileged environments.
-
-```ts
-import { ProficientClient } from "@proficient/admin";
-
-const proficient = new ProficientClient({
-  // Retrieve from your environment secrets
-  secretKey: "sk_cpB...",
-});
-
-const agentId = "ag_h8T...";
-
-await proficient.agents.updateConfig(agentId, {
-  model: "anthropic.claude-v1-100k",
-});
-```
+- Virtual tutors
+- AI assistants for internal tooling
+- General-purpose chatbots
