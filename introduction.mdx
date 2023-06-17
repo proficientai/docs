@@ -5,17 +5,13 @@ description: Add a conversational AI agent to your app in 3 minutes
 
 ## What is Proficient AI?
 
-Proficient AI is a platform that enables developers to add conversational AI agents to their apps in minutes.
-Our interaction APIs and SDKs coupled with our powerful web dashboard are the simplest way teams can
-add and operate AI agents for their end-user applications.
+Proficient AI is a platform that enables developers to add conversational AI agents to their apps
+in minutes. Our interaction APIs and SDKs coupled with our powerful web dashboard are the simplest
+way teams can add and operate AI agents for their end-user applications.
 
 ## How it works
 
-Our intuitive and easy-to-use platform has everything you need to make the integration process a breeze.
-
-### Steps
-
-Here are all the steps required for an end-to-end integration of an AI agent:
+Here is a simple overview of the steps to get started:
 
 1. Go to the [web dashboard](https://proficientai.com) and create an agent with the specified AI provider
 2. Customize the agent to your application's needs by editing its configuration
@@ -29,7 +25,7 @@ are ready to interact with it, once you deploy.
   your agents to all parts of your application.
 </Tip>
 
-### Architecture
+## Architecture
 
 We can visualize the architecture of a typical application powered by Proficient AI with the following diagram.
 
@@ -37,46 +33,61 @@ We can visualize the architecture of a typical application powered by Proficient
   <img src="/images/architecture.png" />
 </Frame>
 
-There are a few key things to note here:
+### Key takeaways
 
-- **Agents live in Proficient cloud**
+There are a few key things to note here.
 
-  Agents are virtual entitites that you operate through the Proficient platform.
+<CardGroup cols={2}>
 
-- **Agents can be connected to many different models**
+<Card title="Agents live in the Proficient cloud" icon="cloud">
+  Agents are virtual entitites that you operate through the Proficient AI
+  platform.
+</Card>
 
-  Proficient is connected to many different LLM providers so you don't have to write your own integration.
+<Card
+  title="Proficient connects to all parts of your application"
+  icon="rectangle-terminal"
+>
+  Although, for simple use cases, you may not even need a custom backend.
+</Card>
 
-- **Your frontend can securely connect to Proficient**
+<Card title="Agents can connect to various LLMs" icon="microchip">
+  Proficient is connected to many different models so you don't have to write
+  your own integration.
+</Card>
 
-  For simple use cases, your app may not even need a custom backend.
-
-- **Your backend can securely connect to Proficient**
-
-  You can use the API to programmatically manage your agents and update user data.
-
-- **Proficient stores interactions and user data**
-
+<Card title="Proficient stores interactions and user data" icon="database">
   You can access your data at any time using the API or admin dashboard.
+</Card>
 
-### Two separate APIs
+</CardGroup>
+
+## Proficient APIs
 
 All operations on the Proficient platform are divided into two categories each of which is represented by
 a standalone API.
 
-#### 1. Client API
+### 1. Client API
 
 The [Client API](/client-api) is designed for client applications that are allowed to access only
 a subset of all available operations. For example, agents can't be configured from a client application. On
 the other hand, an authenticated user sending a message to an agent can be implemented with the Client API.
 
-#### 2. Admin API
+<Card title="Client API Reference" icon="rectangle-terminal" href="/client-api">
+  View all Client API endpoints and operations that you can carry out from your
+  client applications.
+</Card>
 
-The [Admin API](/admin-api) is used in privileged environments like your server. With admin-level
+### 2. Admin API
+
+The [Admin API](/admin-api) is used by backend applications. With admin-level
 access, you can use this API to create, configure and delete agents, monitor interactions, update user data
 and more.
 
-<Info>The Admin API should not be accessed from client applications.</Info>
+<Card title="Admin API Reference" icon="rectangle-terminal" href="/client-api">
+  View all Admin API endpoints and operations that you can carry out from
+  privileged environments.
+</Card>
 
 ## What can I build with it?
 
