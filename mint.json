@@ -70,6 +70,10 @@
       ]
     },
     {
+      "group": "SDKs",
+      "pages": ["sdks/overview"]
+    },
+    {
       "group": "Client API",
       "pages": [
         "client-api/introduction",
