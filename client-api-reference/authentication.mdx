@@ -1,22 +1,38 @@
 ---
 title: "Authentication"
-description: "Example overview page before API endpoints"
+description: "Use request headers for authentication"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus. Curabitur quis sapien nec tortor dictum gravida.
+Authentication with the Client API is achieved with three request headers, one of which is optional depending on your project configuration.
 
-```bash
-'Authorization': 'Token <team_token>'
+## Headers
+
+<ParamField query="X-PROFICIENT-API-KEY" type="string" required>
+  The publishable API key associated with your project. You can find this in the
+  admin dashboard.
+</ParamField>
+
+<ParamField query="X-PROFICIENT-USER-EXTERNAL-ID" type="string" required>
+  A string that uniquely identifies the user within your project. Ensure that
+  this is the ID that you use to identify the user in your system e.g. database
+  ID, Firebase Auth ID etc. Failing to do so may cause unexpected bugs and
+  errors in your application.
+</ParamField>
+
+<ParamField query="X-PROFICIENT-USER-HMAC" type="string" optional>
+  The HMAC hash for the user. See [HMAC Authentication](#hmac-authentication)
+  for more details.
+</ParamField>
+
+Here is an example cURL request containing two auth headers:
+
+<CodeGroup>
+
+```bash cURL
+curl --request GET \
+  --url https://api.proficientai.com/interactions \
+  --header 'X-PROFICIENT-API-KEY: pk_40NDqyJqjBe6DJyLn44HBEgi0loTunwLdjWHhcOUGONSkpomQx0qInkWLtu0ouwSr6qqE7HQ' \
+  --header 'X-PROFICIENT-USER-EXTERNAL-ID: gtLIK8ELsHTr0Fajg28Ud9eFpJJ3'
 ```
 
-## API Tokens
-
-Nullam convallis mauris at nunc consectetur, ac imperdiet leo rutrum. Maecenas cursus purus a pellentesque blandit. Pellentesque vitae lacinia libero, non mollis metus.
-
-Nam id ullamcorper urna, at rutrum enim. [Maecenas vulputate](/introduction) vehicula libero, vitae sodales augue pretium nec. Quisque a magna tempor, semper risus vel, fermentum nunc. Pellentesque fermentum interdum ex, eu convallis massa blandit sed. Aliquam bibendum ipsum vel laoreet auctor.
-
-### Permissions
-
-Etiam lobortis ut odio ut fermentum. Nunc odio velit, sollicitudin at consectetur id, tristique eget turpis. Aliquam at risus vitae dolor sodales venenatis. In hac habitasse platea dictumst.
-
-Aenean consequat diam eget mollis fermentum. [Quisque eu malesuada](/introduction) felis, non dignissim libero.
+</CodeGroup>

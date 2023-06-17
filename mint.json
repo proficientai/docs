@@ -70,8 +70,11 @@
       ]
     },
     {
-      "group": "Client API Documentation",
-      "pages": ["client-api-reference/authentication"]
+      "group": "Client API",
+      "pages": [
+        "client-api-reference/home",
+        "client-api-reference/authentication"
+      ]
     },
     {
       "group": "Agents",
