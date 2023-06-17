@@ -71,7 +71,12 @@
     },
     {
       "group": "SDKs",
-      "pages": ["sdks/overview"]
+      "pages": [
+        "sdks/overview",
+        "sdks/react",
+        "sdks/js-client",
+        "sdks/node-admin"
+      ]
     },
     {
       "group": "Client API",
