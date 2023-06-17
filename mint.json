@@ -73,7 +73,8 @@
       "group": "Client API",
       "pages": [
         "client-api-reference/home",
-        "client-api-reference/authentication"
+        "client-api-reference/authentication",
+        "client-api-reference/specification"
       ]
     },
     {
