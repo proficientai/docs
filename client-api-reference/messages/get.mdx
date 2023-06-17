@@ -7,13 +7,12 @@ openapi: "client-openapi GET /messages/{message_id}"
 ```ts JavaScript SDK
 import { ProficientClient } from "@proficient/client";
 
-const userExternalId = "abc123";
-const messageId = "msg_Blz...";
-
 const proficient = new ProficientClient({
   apiKey: process.env.PROFICIENT_AI_PUBLISHABLE_KEY,
-  userExternalId,
+  userExternalId: "...", // The user's unique ID in your system
 });
+
+const messageId = "msg_BlzvLJ8h2QZY8QOK3vjhIlqK43zciPzpPgIhvTo8ai2VnQIW";
 
 const message = await proficient.messages.get(messageId);
 ```

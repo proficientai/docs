@@ -7,13 +7,12 @@ openapi: "client-openapi GET /users/{user_id}"
 ```ts JavaScript SDK
 import { ProficientClient } from "@proficient/client";
 
-const userExternalId = "abc123";
-const userId = "u_1eR...";
-
 const proficient = new ProficientClient({
   apiKey: process.env.PROFICIENT_AI_PUBLISHABLE_KEY,
-  userExternalId,
+  userExternalId: "...", // The user's unique ID in your system
 });
+
+const userId = "u_1eRoyubdUqWifFiTREaLcvh6";
 
 const user = await proficient.users.get(userId);
 ```

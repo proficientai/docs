@@ -7,13 +7,12 @@ openapi: "client-openapi GET /interactions"
 ```ts JavaScript SDK
 import { ProficientClient } from "@proficient/client";
 
-const userExternalId = "abc123";
-const agentId = "ag_h8T...";
-
 const proficient = new ProficientClient({
   apiKey: process.env.PROFICIENT_AI_PUBLISHABLE_KEY,
-  userExternalId,
+  userExternalId: "...", // The user's unique ID in your system
 });
+
+const agentId = "ag_Lad8YCGGiDLiqIZPWRXmc2ix";
 
 const { data: interactions } = await proficient.interactions.list({ agentId });
 ```

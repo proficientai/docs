@@ -7,17 +7,16 @@ openapi: "client-openapi POST /messages"
 ```ts JavaScript SDK
 import { ProficientClient } from "@proficient/client";
 
-const userExternalId = "abc123";
-const interactionId = "int_kiR...";
-
 const proficient = new ProficientClient({
   apiKey: process.env.PROFICIENT_AI_PUBLISHABLE_KEY,
-  userExternalId,
+  userExternalId: "...", // The user's unique ID in your system
 });
+
+const interactionId = "int_53mfKtX0Da6zaJCp5bNnzxDaEg1xptWvQDr2";
 
 const message = await proficient.messages.create({
   interactionId,
-  content: "Hello!",
+  content: "Hello! Tell me something about Anaximander.",
 });
 ```
 
