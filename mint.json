@@ -41,7 +41,7 @@
     {
       "name": "Client API Reference",
       "icon": "rectangle-terminal",
-      "url": "client-api-reference"
+      "url": "client-api"
     },
     {
       "name": "Admin API Reference",
@@ -72,43 +72,37 @@
     {
       "group": "Client API",
       "pages": [
-        "client-api-reference/introduction",
-        "client-api-reference/authentication",
-        "client-api-reference/specification"
+        "client-api/introduction",
+        "client-api/authentication",
+        "client-api/specification"
       ]
     },
     {
       "group": "Agents",
-      "pages": [
-        "client-api-reference/agents/list",
-        "client-api-reference/agents/get"
-      ]
+      "pages": ["client-api/agents/list", "client-api/agents/get"]
     },
     {
       "group": "Interactions",
       "pages": [
-        "client-api-reference/interactions/list",
-        "client-api-reference/interactions/create",
-        "client-api-reference/interactions/get",
-        "client-api-reference/interactions/update",
-        "client-api-reference/interactions/delete"
+        "client-api/interactions/list",
+        "client-api/interactions/create",
+        "client-api/interactions/get",
+        "client-api/interactions/update",
+        "client-api/interactions/delete"
       ]
     },
     {
       "group": "Messages",
       "pages": [
-        "client-api-reference/messages/list",
-        "client-api-reference/messages/create",
-        "client-api-reference/messages/get",
-        "client-api-reference/messages/ask"
+        "client-api/messages/list",
+        "client-api/messages/create",
+        "client-api/messages/get",
+        "client-api/messages/ask"
       ]
     },
     {
       "group": "Users",
-      "pages": [
-        "client-api-reference/users/get",
-        "client-api-reference/users/update"
-      ]
+      "pages": ["client-api/users/get", "client-api/users/update"]
     },
     {
       "group": "Admin API Documentation",
