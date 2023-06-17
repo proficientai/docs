@@ -46,7 +46,7 @@
     {
       "name": "Admin API Reference",
       "icon": "rectangle-terminal",
-      "url": "admin-api-reference"
+      "url": "admin-api"
     },
     {
       "name": "Community",
@@ -106,14 +106,14 @@
     },
     {
       "group": "Admin API Documentation",
-      "pages": ["admin-api-reference/authentication"]
+      "pages": ["admin-api/authentication"]
     },
     {
       "group": "Agents",
       "pages": [
-        "admin-api-reference/agents/get",
-        "admin-api-reference/agents/list",
-        "admin-api-reference/agents/create"
+        "admin-api/agents/get",
+        "admin-api/agents/list",
+        "admin-api/agents/create"
       ]
     }
   ],
