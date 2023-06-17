@@ -99,6 +99,11 @@
         "client-api-reference/messages/ask"
       ]
     },
+    {
+      "group": "Users",
+      "pages": [
+        "client-api-reference/users/get",
+        "client-api-reference/users/update"
       ]
     },
     {
