@@ -64,7 +64,7 @@ The HMAC hash needs to computed in your backend for each user. You can set up a 
 (e.g. a Firebase Cloud Function or AWS Lambda) where you authenticate the user and then proceed to
 compute the hash with their unique ID.
 
-<Info>
+<Check>
 
 Summarizing the entire flow:
 
@@ -73,4 +73,81 @@ Summarizing the entire flow:
 3. Your backend computes the hash and sends it back to your frontend.
 4. Your frontend can now access Proficient's Client API with the `X-PROFICIENT-USER-HMAC` header.
 
-</Info>
+</Check>
+
+### React + Node.js Example
+
+Here is a simple example with a React application using the [React SDK](/react-sdk) for
+the frontend and an Node.js/Express application for the backend.
+
+<CodeGroup>
+
+```tsx App.tsx
+import { InteractionView } from "@proficient/react";
+import axios from "axios";
+
+async function retrieveHmacHash(userExternalId: string) {
+  type Response = {
+    hmac: string;
+  };
+  const serverBaseUrl = "http://example.com"; // Replace with your own
+  const { data } = await axios.request<Response>({
+    baseURL: `${serverBaseUrl}/hmac`,
+    data: { userExternalId },
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return data.hmac;
+}
+
+export default function App() {
+  // Agent ID can be hardcoded or retrieved from the API
+  const agentId = "ag_Lad8YCGGiDLiqIZPWRXmc2ix";
+  // User external ID should be accessed dynamically
+  const userExternalId = "gtLIK8ELsHTr0Fajg28Ud9eFpJJ3";
+  return (
+    <div>
+      <InteractionView
+        apiKey={process.env.NEXT_PUBLIC_PROFICIENT_KEY}
+        agentId={agentId}
+        userExternalId={userExternalId}
+        userHmac={() => retrieveHmacHash(userExternalId)}
+      />
+    </div>
+  );
+}
+```
+
+```ts server.ts
+import { createHmac } from "crypto";
+import * as express from "express";
+
+// This should most likely go into your environment secrets.
+// Store it securely in your backend and never expose it in the client.
+const HMAC_SECRET =
+  "hsec_mFLSkjGK6XLK1TUxL8wgiXrjwZCqcfmgbXTC0JmZFooSl9rQlzIrpsQHNor4guw2YOUP7vWA";
+
+const app = express();
+
+app.use(express.json());
+
+app.post("/hmac", (req, res) => {
+  const { userExternalId } = req.body;
+  // Use your authentication system to authenticate the user request.
+  const isAuthorized = true;
+  if (!isAuthorized) {
+    res.status(401).send({ message: "Unauthorized" });
+    return;
+  }
+  const hmacHash = createHmac("sha256", HMAC_SECRET)
+    .update(userExternalId)
+    .digest("base64");
+  // --> "nyrKK9qcWqgPSdky2VE+arkyJjMFt9FD1Fxl/iNOD5U="
+  res.status(200).send({ hmac: hmacHash });
+});
+
+app.listen(8080, () => console.log(`Running on port 8080`));
+```
+
+</CodeGroup>
