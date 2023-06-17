@@ -1,0 +1,24 @@
+---
+openapi: "client-openapi POST /messages"
+---
+
+<RequestExample>
+
+```ts JavaScript SDK
+import { ProficientClient } from "@proficient/client";
+
+const userExternalId = "abc123";
+const interactionId = "int_kiR...";
+
+const proficient = new ProficientClient({
+  apiKey: process.env.PROFICIENT_AI_PUBLISHABLE_KEY,
+  userExternalId,
+});
+
+const message = await proficient.messages.create({
+  interactionId,
+  content: "Hello!",
+});
+```
+
+</RequestExample>

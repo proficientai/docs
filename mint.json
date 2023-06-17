@@ -90,6 +90,15 @@
         "client-api-reference/interactions/delete"
       ]
     },
+    {
+      "group": "Messages",
+      "pages": [
+        "client-api-reference/messages/list",
+        "client-api-reference/messages/create",
+        "client-api-reference/messages/get",
+        "client-api-reference/messages/ask"
+      ]
+    },
       ]
     },
     {
