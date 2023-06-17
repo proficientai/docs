@@ -76,8 +76,20 @@
     {
       "group": "Agents",
       "pages": [
-        "client-api-reference/agents/get",
-        "client-api-reference/agents/list"
+        "client-api-reference/agents/list",
+        "client-api-reference/agents/get"
+      ]
+    },
+    {
+      "group": "Interactions",
+      "pages": [
+        "client-api-reference/interactions/list",
+        "client-api-reference/interactions/create",
+        "client-api-reference/interactions/get",
+        "client-api-reference/interactions/update",
+        "client-api-reference/interactions/delete"
+      ]
+    },
       ]
     },
     {
