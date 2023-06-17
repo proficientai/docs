@@ -1,6 +1,16 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Proficient AI Documentation",
+  "api": {
+    "baseUrl": "https://api.proficientai.com",
+    "auth": {
+      "method": "key"
+    },
+    "playground": {
+      "mode": "show"
+    }
+  },
+  "openapi": ["admin-openapi.yml", "client-openapi.yml"],
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
