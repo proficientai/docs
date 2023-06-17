@@ -70,9 +70,9 @@
       ]
     },
     {
-      "group": "Client API",
+      "group": "Overview",
       "pages": [
-        "client-api-reference/home",
+        "client-api-reference/introduction",
         "client-api-reference/authentication",
         "client-api-reference/specification"
       ]
