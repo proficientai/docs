@@ -9,7 +9,7 @@ Authentication with the Client API is achieved with three request headers, one o
 
 <ParamField query="X-PROFICIENT-API-KEY" type="string" required>
   The publishable API key associated with your project. You can find this in the
-  admin dashboard.
+  admin dashboard. It's a string that starts with `pk_`.
 </ParamField>
 
 <ParamField query="X-PROFICIENT-USER-EXTERNAL-ID" type="string" required>
@@ -36,3 +36,41 @@ curl --request GET \
 ```
 
 </CodeGroup>
+
+## HMAC Authentication
+
+HMAC authentication is a mechanism that provides an additional layer of security to ensure your client
+application can securely consume Proficient APIs. To enable HMAC authentication for a given project you
+simply need to go the [Project Settings](https://proficientai.com/project-settings) page on the dashboard
+and toggle it on.
+
+Once HMAC authentication is enabled, all Client API endpoints will require a `X-PROFICIENT-USER-HMAC`
+header, and the requests that don't include will be rejected with a `401` error.
+
+<Warning>
+  While HMAC authentication is optional, we strongly recommend enabling it for
+  applications that have an authentication flow where user data is persisted
+  into your system. Disabling HMAC may pose a security risk where an end user
+  can access another user's data.
+</Warning>
+
+### Computing the HMAC hash
+
+The HMAC hash is a string generated with the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm using your project's HMAC secret as key and
+your user's external ID. You can find the HMAC secret associated with your project in [Project Settings](https://proficientai.com/project-settings).
+It's a string that starts with `hsec_`.
+
+The HMAC hash needs to computed in your backend for each user. You can set up a small backend service
+(e.g. a Firebase Cloud Function or AWS Lambda) where you authenticate the user and then proceed to
+compute the hash with their unique ID.
+
+<Info>
+
+Summarizing the entire flow:
+
+1. Your frontend sends a request to your backend with the user's external ID.
+2. Your backend authenticates the request using your authentication system.
+3. Your backend computes the hash and sends it back to your frontend.
+4. Your frontend can now access Proficient's Client API with the `X-PROFICIENT-USER-HMAC` header.
+
+</Info>
