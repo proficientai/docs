@@ -109,7 +109,8 @@ export default function App() {
   return (
     <div>
       <InteractionView
-        apiKey={process.env.NEXT_PUBLIC_PROFICIENT_KEY}
+        // Your publishable API key that starts with `pk_`
+        apiKey={process.env.PROFICIENT_API_KEY}
         agentId={agentId}
         userExternalId={userExternalId}
         userHmac={() => retrieveHmacHash(userExternalId)}

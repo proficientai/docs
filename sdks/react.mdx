@@ -2,4 +2,79 @@
 title: "React SDK"
 ---
 
-The React SDK for client applications using React.
+The React SDK for Proficient AI allows you to build chat interfaces where your users can interact
+with your agents. The React SDK currently comes with one component named `InteractionView`, which
+can be themed and customized to your application's needs.
+
+## Installation
+
+You can install the React SDK via [npm](https://www.npmjs.com/package/@proficient/react) or [Yarn](https://yarnpkg.com/package/@proficient/react).
+
+<CodeGroup>
+
+```bash npm
+npm i -E @proficient/react
+```
+
+```bash yarn
+yarn add -E @proficient/react
+```
+
+</CodeGroup>
+
+<br />
+
+<Info>
+  Since we are at an early stage and moving fast, we recommend using the exact
+  version for each SDK (hence the `-E` flag). This will prevent sudden undesired
+  changes in your application.
+</Info>
+
+## Quickstart
+
+<CodeGroup>
+
+```tsx Next.js
+import { InteractionView } from "@proficient/react";
+
+export default function App() {
+  // Agent ID can be hardcoded or retrieved from the API
+  const agentId = "ag_Lad8YCGGiDLiqIZPWRXmc2ix";
+  // User external ID should be accessed dynamically
+  const userExternalId = "gtLIK8ELsHTr0Fajg28Ud9eFpJJ3";
+  return (
+    <div>
+      <InteractionView
+        // Your publishable API key that starts with `pk_`
+        apiKey={process.env.NEXT_PUBLIC_PROFICIENT_API_KEY}
+        agentId={agentId}
+        userExternalId={userExternalId}
+      />
+    </div>
+  );
+}
+```
+
+```tsx Other React
+import React from "react";
+import { InteractionView } from "@proficient/react";
+
+export default function App() {
+  // Agent ID can be hardcoded or retrieved from the API
+  const agentId = "ag_Lad8YCGGiDLiqIZPWRXmc2ix";
+  // User external ID should be accessed dynamically
+  const userExternalId = "gtLIK8ELsHTr0Fajg28Ud9eFpJJ3";
+  return (
+    <div>
+      <InteractionView
+        // Your publishable API key that starts with `pk_`
+        apiKey={process.env.PROFICIENT_API_KEY}
+        agentId={agentId}
+        userExternalId={userExternalId}
+      />
+    </div>
+  );
+}
+```
+
+</CodeGroup>
