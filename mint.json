@@ -114,8 +114,12 @@
       "pages": ["client-api/users/get", "client-api/users/update"]
     },
     {
-      "group": "Admin API Documentation",
-      "pages": ["admin-api/authentication"]
+      "group": "Admin API",
+      "pages": [
+        "admin-api/introduction",
+        "admin-api/authentication",
+        "admin-api/specification"
+      ]
     },
     {
       "group": "Agents",
