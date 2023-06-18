@@ -130,6 +130,16 @@
         "admin-api/agents/activate",
         "admin-api/agents/deactivate"
       ]
+    },
+    {
+      "group": "Users",
+      "pages": [
+        "admin-api/users/list",
+        "admin-api/users/create",
+        "admin-api/users/get",
+        "admin-api/users/update",
+        "admin-api/users/delete"
+      ]
     }
   ],
   "footerSocials": {
