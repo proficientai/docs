@@ -25,17 +25,37 @@ yarn add -E @proficient/react
 
 <br />
 
-<Info>
+<Tip>
   Since we are at an early stage and moving fast, we recommend using the exact
   version for each SDK (hence the `-E` flag). This will prevent sudden undesired
   changes in your application.
-</Info>
+</Tip>
 
 ## Quickstart
 
-<CodeGroup>
+You can connect your application to Proficient AI in just a few minutes.
 
-```tsx Next.js
+<Info>
+  **Prerequisite:** Make sure you've created and activated an agent before
+  proceeding further. See [creating my first agent](/#create-agent) for more
+  details.
+</Info>
+
+<Tabs>
+  <Tab title="Next.js">
+Copy the publishable API key associated with your project from [Project Settings](https://proficientai.com/project-settings).
+Add it as a `NEXT_PUBLIC_PROFICIENT_API_KEY` environment variable to your app.
+
+<Tip>
+  For details on how to add an environment variable to your Next.js app see the
+  [official
+  docs](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables).
+</Tip>
+
+Now add the `InteractionView` component to the page where you want your users to interact
+with your agent.
+
+```tsx
 import { InteractionView } from "@proficient/react";
 
 export default function App() {
@@ -56,7 +76,21 @@ export default function App() {
 }
 ```
 
-```tsx Other React
+  </Tab>
+  <Tab title="Other React">
+Copy the publishable API key associated with your project from [Project Settings](https://proficientai.com/project-settings).
+Add it as a `PROFICIENT_API_KEY` environment variable to your app.
+
+<Tip>
+  If you're not sure how to add an environment variable to your React app, check
+  out [this
+  page](https://www.architect.io/blog/2022-08-16/react-environment-variables-developers-guide/).
+</Tip>
+
+Now add the `InteractionView` component to the page where you want your users to interact
+with your agent.
+
+```tsx
 import React from "react";
 import { InteractionView } from "@proficient/react";
 
@@ -78,4 +112,8 @@ export default function App() {
 }
 ```
 
-</CodeGroup>
+  </Tab>
+</Tabs>
+
+The `userExternalId` variable above simply refers to the unique ID of your user. For
+more details see [User External ID](/concepts#external-id).
