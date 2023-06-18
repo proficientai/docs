@@ -117,3 +117,67 @@ export default function App() {
 
 The `userExternalId` variable above simply refers to the unique ID of your user. For
 more details see [User External ID](/concepts#external-id).
+
+## Props
+
+<ResponseField name="apiKey" type="string" required>
+  The publishable API key associated with your project. This can be found in the
+  admin dashboard.
+</ResponseField>
+
+<ResponseField name="agentId" type="string" required>
+  The unique ID of the agent. This can be found in the admin dashboard.
+</ResponseField>
+
+<ResponseField name="userExternalId" type="string" required>
+  The unique ID of the user within your system. See [User External
+  ID](/concepts/external-id) for more details.
+</ResponseField>
+
+<ResponseField name="userHmac" type="string | () => Promise<string>">
+  Either the HMAC hash for the given user or a function that returns a Promise
+  resolving to the HMAC hash. This is required if the project has HMAC
+  authentication enabled. See [HMAC
+  Authentication](/client-api/auth#hmac-authentication) for more details.
+</ResponseField>
+
+<ResponseField name="layout" type={`"casual" | "formal"`} default="casual">
+  The type of the chat interface layout.
+
+- `"casual"`: looks like iMessage/WhatsApp.
+- `"formal"`: looks like ChatGPT.
+
+</ResponseField>
+
+<ResponseField name="chatSectionHeight" type="number" default={320}>
+  Chat section height in pixels. Must be greater than or equal to 240.
+</ResponseField>
+
+<ResponseField name="headerSectionHeight" type="number" default={54}>
+  Header section height in pixels. Must be greater than or equal to 54.
+</ResponseField>
+
+<ResponseField name="autoRequestReply" type="boolean" default={true}>
+  If set to `true`, sending a message to the agent will automatically trigger an
+  [Ask](/client-api/messages/ask) request and the agent will reply to the
+  message. This is the intuitive option but if you disable it, users will be
+  able to send multiple messages before asking for a reply.
+</ResponseField>
+
+<ResponseField name="sendOnEnter" type="boolean" default={true}>
+  If set to `true`, pressing Enter will send the current text input as message.
+</ResponseField>
+
+<ResponseField
+  name="inputPlaceholder"
+  type="string"
+  default="Type something..."
+>
+  The placeholder for the text area.
+</ResponseField>
+
+<ResponseField name="theme" type="ProficientTheme">
+  The theme object including your brand colors. Can be created with the
+  `createTheme(params)` factory function. See [custom themes](/#custom-themes)
+  for more details.
+</ResponseField>
