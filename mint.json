@@ -62,12 +62,7 @@
   "navigation": [
     {
       "group": "Getting Started",
-      "pages": [
-        "introduction",
-        "why-proficient",
-        "core-concepts",
-        "installation"
-      ]
+      "pages": ["intro", "why-proficient", "concepts", "installation"]
     },
     {
       "group": "SDKs",
@@ -80,11 +75,7 @@
     },
     {
       "group": "Client API",
-      "pages": [
-        "client-api/introduction",
-        "client-api/authentication",
-        "client-api/specification"
-      ]
+      "pages": ["client-api/intro", "client-api/auth", "client-api/spec"]
     },
     {
       "group": "Agents",
@@ -115,11 +106,7 @@
     },
     {
       "group": "Admin API",
-      "pages": [
-        "admin-api/introduction",
-        "admin-api/authentication",
-        "admin-api/specification"
-      ]
+      "pages": ["admin-api/intro", "admin-api/auth", "admin-api/spec"]
     },
     {
       "group": "Agents",
