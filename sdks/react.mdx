@@ -118,7 +118,17 @@ export default function App() {
 The `userExternalId` variable above simply refers to the unique ID of your user. For
 more details see [User External ID](/concepts#external-id).
 
-## Props
+## `InteractionView`
+
+A chat interface component that allows users to interact with a Proficient AI agent.
+
+<Note>
+  This is currently the only component that the React SDK offers. [Let us
+  know](https://discord.gg/DVbwTM8erb) if you need other types of components.
+  We'd love to support your use case!
+</Note>
+
+### Props
 
 <ResponseField name="apiKey" type="string" required>
   The publishable API key associated with your project. This can be found in the
@@ -181,3 +191,41 @@ more details see [User External ID](/concepts#external-id).
   `createTheme(params)` factory function. See [custom themes](/#custom-themes)
   for more details.
 </ResponseField>
+
+## Custom themes
+
+You can use a custom theme to preserve your brand identity and ensure that the component
+interface matches the rest of your application.
+
+Custom themes can be created with the `createTheme(params)` factory function which currently
+takes three colors as parameters. We then dynamically compute the rest of the colors that
+the component uses based on these three values.
+
+```ts
+import { createTheme } from "@proficient/react";
+
+const theme = createTheme({
+  colors: {
+    background: "#1d1822",
+    primary: "#9c0588",
+    text: "#fff",
+  },
+});
+```
+
+Simply pass the theme object to the component as the `theme` prop.
+
+```tsx
+<InteractionView
+  // ... other props
+  theme={theme}
+/>
+```
+
+<Tip>
+  If you're not happy with the dynamically computed theme, you can create it
+  yourself instead of using `createTheme(params)`. A theme is just a plain
+  object that conforms to the
+  [ProficientTheme](https://github.com/proficientai/js/blob/main/packages/react/src/context/theme.ts)
+  interface so you can create it any way you want.
+</Tip>
