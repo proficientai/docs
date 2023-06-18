@@ -1,22 +1,42 @@
 ---
 title: "Authentication"
-description: "Example overview page before API endpoints"
+description: "Use Bearer Authentication scheme"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus. Curabitur quis sapien nec tortor dictum gravida.
+The Admin API uses secret API keys for authentication. All API requests must contain an `Authorization` header,
+containing your secret key in the format specified by the [Bearer Authentication](https://swagger.io/docs/specification/authentication/bearer-authentication/)
+scheme:
 
 ```bash
-'Authorization': 'Bearer <secret_key>'
+Authorization: Bearer <PROFICIENT_SECRET_KEY>
 ```
 
-## Secret Key
+<Info>
+  You can create and delete secret keys in [Project
+  Settings](https://proficientai.com/project-settings). Secret keys are strings
+  that start with `sk_`.
+</Info>
 
-Nullam convallis mauris at nunc consectetur, ac imperdiet leo rutrum. Maecenas cursus purus a pellentesque blandit. Pellentesque vitae lacinia libero, non mollis metus.
+<Warning>
+  Never expose your project's secret keys in the frontend (e.g. browser or
+  mobile apps). You should store your secret keys securely in your environment
+  secrets and never commit them to version control.
+</Warning>
 
-Nam id ullamcorper urna, at rutrum enim. [Maecenas vulputate](/introduction) vehicula libero, vitae sodales augue pretium nec. Quisque a magna tempor, semper risus vel, fermentum nunc. Pellentesque fermentum interdum ex, eu convallis massa blandit sed. Aliquam bibendum ipsum vel laoreet auctor.
+## Headers
 
-### Permissions
+<ParamField query="Authorization" type="string" required>
+A string containing your secret key in the following format: `Bearer <PROFICIENT_SECRET_KEY>`
+</ParamField>
 
-Etiam lobortis ut odio ut fermentum. Nunc odio velit, sollicitudin at consectetur id, tristique eget turpis. Aliquam at risus vitae dolor sodales venenatis. In hac habitasse platea dictumst.
+Here is an example cURL request that deactivates an agent:
 
-Aenean consequat diam eget mollis fermentum. [Quisque eu malesuada](/introduction) felis, non dignissim libero.
+<CodeGroup>
+
+```bash cURL
+curl --request POST \
+  --url https://api.proficientai.com/agents/ag_Lad8YCGGiDLiqIZPWRXmc2ix/deactivate \
+  --header 'Authorization sk_cpB2oJbsXg9XWPOKs5CFGp7n4FKZJO2cb4s1te61mqT9tgmupOp0kFqJWtAAPjK6xAS2tOp2'
+```
+
+</CodeGroup>
