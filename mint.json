@@ -120,9 +120,15 @@
     {
       "group": "Agents",
       "pages": [
-        "admin-api/agents/get",
         "admin-api/agents/list",
-        "admin-api/agents/create"
+        "admin-api/agents/create",
+        "admin-api/agents/get",
+        "admin-api/agents/update",
+        "admin-api/agents/delete",
+        "admin-api/agents/get_config",
+        "admin-api/agents/update_config",
+        "admin-api/agents/activate",
+        "admin-api/agents/deactivate"
       ]
     }
   ],
