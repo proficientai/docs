@@ -60,13 +60,13 @@ The HMAC hash is a string generated with the [SHA-256](https://en.wikipedia.org/
 your user's external ID. You can find the HMAC secret associated with your project in [Project Settings](https://proficientai.com/project-settings).
 It's a string that starts with `hsec_`.
 
-The HMAC hash needs to computed in your backend for each user. You can set up a small backend service
-(e.g. a Firebase Cloud Function or AWS Lambda) where you authenticate the user and then proceed to
+The HMAC hash needs to be computed in your backend for each user. You can set up a small backend service
+(e.g. a Firebase Cloud Function or AWS Lambda) where you authenticate your user and then proceed to
 compute the hash with their unique ID.
 
-<Check>
+**Summarizing the entire flow:**
 
-Summarizing the entire flow:
+<Check>
 
 1. Your frontend sends a request to your backend with the user's external ID.
 2. Your backend authenticates the request using your authentication system.
@@ -78,7 +78,7 @@ Summarizing the entire flow:
 ### React + Node.js Example
 
 Here is a simple example with a React application using the [React SDK](/react-sdk) for
-the frontend and an Node.js/Express application for the backend.
+the frontend and a Node.js/Express application for the backend.
 
 <CodeGroup>
 
