@@ -7,23 +7,61 @@ description: Add a conversational AI agent to your app in 3 minutes
 
 Proficient AI is a platform that enables developers to add conversational AI agents to their apps
 in minutes. Our interaction APIs and SDKs coupled with our powerful web dashboard are the simplest
-way teams can add and operate AI agents for their end-user applications.
+way teams can add and operate <Tooltip tip="Large Language Model">LLM</Tooltip>-powered agents for their end-user applications.
 
 ## How it works
 
 Here is a simple overview of the steps to get started:
 
-1. Go to the [web dashboard](https://proficientai.com) and create an agent with the specified AI provider
+1. Go to the [web dashboard](https://proficientai.com) and create an agent with the specified model
 2. Customize the agent to your application's needs by editing its configuration
 3. Add the prebuilt UI component to your app to connect it to the agent (3-5 lines of code)
 
 Done! The agent appears in a chat window with a persistent conversation history and your users
 are ready to interact with it, once you deploy.
 
+{/* TODO: Add a screenshot */}
+
 <Tip>
-  For more advanced features, you need to use the API, which lets you connect
+  For more advanced features, you need to use the [API](#proficient-apis), which lets you connect
   your agents to all parts of your application.
 </Tip>
+
+## Demo
+
+Here is a short demo video (2 min, 27 sec) that shows how you can add an AI agent to your React application.
+
+<Note>
+  This demo is from 7 Apr 2023. We've built a lot features since then and will
+  add a new demo soon.
+</Note>
+
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/tPFDtd_C5vI"
+  title="Proficent AI Demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+## What can I build with it?
+
+Proficient agents are abstract, generalized virtual robots that can be used for various purposes. In your
+application, you can present your agents in many forms such as:
+
+- virtual tutors that teach your users a variety of subjects
+- chatbots that know your business and respond to customer queries
+- AI assistants that engage with your product's users
+
+Basically, all types of applications that require an abstract AI entity to interact with their users can use a Proficient AI agent.
+
+<Note>
+  Reach out to us via [Discord](https://discord.gg/DVbwTM8erb) or
+  [email](mailto:anar@proficientai.com) if you're not sure whether you can use a
+  Proficient agent for your product. We'd be more than happy to help you.
+</Note>
 
 ## Architecture
 
@@ -35,9 +73,7 @@ We can visualize the architecture of a typical application powered by Proficient
 
 ### Key takeaways
 
-There are a few key things to note here.
-
-<CardGroup cols={2}>
+There are a few key things to note here:
 
 <Card title="Agents live in the Proficient cloud" icon="cloud">
   Agents are virtual entitites that you operate through the Proficient AI
@@ -59,8 +95,6 @@ There are a few key things to note here.
 <Card title="Proficient stores interactions and user data" icon="database">
   You can access your data at any time using the API or admin dashboard.
 </Card>
-
-</CardGroup>
 
 ## Proficient APIs
 
@@ -88,9 +122,3 @@ and more.
   View all Admin API endpoints and operations that you can carry out from
   privileged environments.
 </Card>
-
-## What can I build with it?
-
-- Virtual tutors
-- AI assistants for internal tooling
-- General-purpose chatbots
