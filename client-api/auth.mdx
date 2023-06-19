@@ -57,8 +57,9 @@ header, and the requests that don't include will be rejected with a `401` error.
 
 ### Computing the HMAC hash
 
-The HMAC hash is a string generated with the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm using your project's HMAC secret as key and
-your user's external ID.
+The [HMAC](https://en.wikipedia.org/wiki/HMAC) hash is a string generated with the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm and
+digested with [Base64](https://en.wikipedia.org/wiki/Base64). It is produced using your project's HMAC secret as key and your user's external ID
+as message.
 
 <Info>
   You can find the HMAC secret associated with your project in [Project
