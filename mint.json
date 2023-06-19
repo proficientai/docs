@@ -10,6 +10,11 @@
       "mode": "show"
     }
   },
+  "analytics": {
+    "posthog": {
+      "apiKey": "phc_9KnDgBFBrOLG4Sp9dbn6nVpighZAkNDbimz0CGib5Uo"
+    }
+  },
   "openapi": ["admin-openapi.yml", "client-openapi.yml"],
   "logo": {
     "dark": "/logo/dark.png",
