@@ -13,7 +13,8 @@
   "openapi": ["admin-openapi.yml", "client-openapi.yml"],
   "logo": {
     "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
+    "light": "/logo/light.png",
+    "href": "https://proficientai.com"
   },
   "favicon": "/favicon.png",
   "colors": {
