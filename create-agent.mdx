@@ -19,6 +19,15 @@ title: "Creating my first agent"
     To update your agent's configuration, visit the Agent Configuration page. You can set your own values for
     system message, initial turn, provider-specific options like `temperature` and `frequency_penalty` etc.
 
+    When configuring the agent, you have access to dynamic API resources like `user` and `agent`. You can use the
+    [Handlebars](https://handlebarsjs.com/guide/#what-is-handlebars) template format to refer to these resources
+    in your configuration:
+
+    ```txt System Message
+    You are an AI assistant that works for Acme Inc. Your name is {{agent.display_name}}. Your main task is to
+    help {{user.first_name}} with any questions they may have.
+    ```
+
 4.  **Activate the agent**
 
     Once you've configured your agent, you can then activate it so that it starts responding to user requests.
