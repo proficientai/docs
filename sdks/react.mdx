@@ -3,13 +3,22 @@ title: "React SDK"
 icon: "react"
 ---
 
-The React SDK for Proficient AI allows you to build chat interfaces where your users can interact
-with your agents. The React SDK currently comes with one component named `InteractionView`, which
-can be themed and customized to your application's needs.
+The React SDK for Proficient AI provides you with ready-to-use and customizable interfaces where your users
+can interact with your agents. Internally, it uses the [JS Client SDK](/sdks/js-client) to connect to your
+agents. The React SDK currently comes with one component named `InteractionView`, which can be themed
+and customized to your application's needs.
 
-{/* TODO: Explain that it uses Client API. */}
-
-{/* TODO: Link to hmac auth. */}
+<Frame type="simple">
+  <img
+    src="/images/interactionview-code.png"
+    style={{
+      width: "100%",
+      maxWidth: 600,
+      marginLeft: "auto",
+      marginRight: "auto",
+    }}
+  />
+</Frame>
 
 ## Installation
 
@@ -122,6 +131,15 @@ more details see [User External ID](/concepts#external-id).
 
 A chat interface component that allows your users to interact with your Proficient AI agent.
 
+<Frame type="simple">
+  <img
+    src="/images/interactionview-frame.png"
+    style={{ width: "100%", padding: 10 }}
+  />
+</Frame>
+
+<br />
+
 <Note>
   This is currently the only component that the React SDK offers. [Let us
   know](https://discord.gg/DVbwTM8erb) if you need other types of components.
@@ -147,7 +165,8 @@ A chat interface component that allows your users to interact with your Proficie
 <ResponseField name="userHmac" type="string | () => Promise<string>">
   Either the HMAC hash for the given user or a function that returns a Promise
   resolving to the HMAC hash. This is required if the project has HMAC
-  authentication enabled. See [HMAC
+  authentication enabled. Internally, the component caches the HMAC hash so that
+  it is not computed on every render. See [HMAC
   Authentication](/client-api/auth#hmac-authentication) for more details.
 </ResponseField>
 
@@ -229,3 +248,5 @@ Simply pass the theme object to the component as the `theme` prop.
   [ProficientTheme](https://github.com/proficientai/js/blob/main/packages/react/src/context/theme.ts)
   interface so you can create it any way you want.
 </Tip>
+
+{/* TODO: Link to hmac auth. */}
